@@ -39,11 +39,11 @@ def run():
             smoker = 'yes'
         else:
             smoker = 'no'
-        Typ katalogowy = st.selectbox('Typ katalogowy', ['A3100.126', 'A3100.128', 'A3101.126', 'A3105.126'])
+        Typ = st.selectbox('Typ katalogowy', ['A3100.126', 'A3100.128', 'A3101.126', 'A3105.126'])
 
         output=""
 
-        input_dict = {'Długość' : Długość, 'sex' : Głębokość, 'Głębokość' : bmi, 'Wysokość' : Wysokość,  'Typ katalogowy' : Typ katalogowy}
+        input_dict = {'Długość' : Długość, 'sex' : Głębokość, 'Głębokość' : bmi, 'Wysokość' : Wysokość,  'Typ' : Typ katalogowy}
         input_df = pd.DataFrame([input_dict])
 
         if st.button("Predict"):
