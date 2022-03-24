@@ -43,7 +43,7 @@ def run():
 
         output=""
 
-        input_dict = {'Długość' : Długość, 'sex' : Głębokość, 'Głębokość' : bmi, 'Wysokość' : Wysokość,  'Typ' : Typ katalogowy}
+        input_dict = {'Długość' : Długość, 'sex' : Głębokość, 'Głębokość' : bmi, 'Wysokość' : Wysokość,  'Typ katalogowy' : Typ}
         input_df = pd.DataFrame([input_dict])
 
         if st.button("Predict"):
