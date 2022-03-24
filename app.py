@@ -31,9 +31,9 @@ def run():
 
     if add_selectbox == 'Online':
 
-        Długość = st.number_input('Długość', min_value=100, max_value=3000, value=1200)
-        Głębokość = st.number_input('Głębokość', min_value=100, max_value=3000, value=600)
-        Wysokość = st.number_input('Wysokość', min_value=50, max_value=2500, value=850)
+        D = st.number_input('Długość', min_value=100, max_value=3000, value=1200)
+        G = st.number_input('Głębokość', min_value=100, max_value=3000, value=600)
+        W = st.number_input('Wysokość', min_value=50, max_value=2500, value=850)
         
         if st.checkbox('Standard'):
             smoker = 'yes'
@@ -43,7 +43,7 @@ def run():
 
         output=""
 
-        input_dict = {'Długość' : Długość, 'sex' : Głębokość, 'Głębokość' : bmi, 'Wysokość' : Wysokość,  'Typ katalogowy' : Typ}
+        input_dict = {'Długość' : D, 'Głębokość' : G, 'Wysokość' : W,  'Typ katalogowy' : Typ}
         input_df = pd.DataFrame([input_dict])
 
         if st.button("Predict"):
