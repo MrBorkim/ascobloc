@@ -31,19 +31,19 @@ def run():
 
     if add_selectbox == 'Online':
 
-        age = st.number_input('Długość', min_value=100, max_value=3000, value=1200)
-        sex = st.number_input('Szerokość', min_value=100, max_value=3000, value=600)
-        bmi = st.number_input('Wysokość', min_value=50, max_value=2500, value=850)
+        Długość = st.number_input('Długość', min_value=100, max_value=3000, value=1200)
+        Głębokość = st.number_input('Głębokość', min_value=100, max_value=3000, value=600)
+        Wysokość = st.number_input('Wysokość', min_value=50, max_value=2500, value=850)
         
         if st.checkbox('Standard'):
             smoker = 'yes'
         else:
             smoker = 'no'
-        region = st.selectbox('TYP', ['southwest', 'northwest', 'northeast', 'southeast'])
+        Typ katalogowy = st.selectbox('Typ katalogowy', ['A3100.126', 'A3100.128', 'A3101.126', 'A3105.126'])
 
         output=""
 
-        input_dict = {'age' : age, 'sex' : sex, 'bmi' : bmi, 'children' : children, 'smoker' : smoker, 'region' : region}
+        input_dict = {'Długość' : Długość, 'sex' : Głębokość, 'Głębokość' : bmi, 'Wysokość' : Wysokość,  'Typ katalogowy' : Typ katalogowy}
         input_df = pd.DataFrame([input_dict])
 
         if st.button("Predict"):
