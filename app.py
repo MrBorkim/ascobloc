@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-model = load_model('deployment_28042020')
+model = load_model('final xgboost')
 
 def predict(model, input_df):
     predictions_df = predict_model(estimator=model, data=input_df)
@@ -31,15 +31,15 @@ def run():
 
     if add_selectbox == 'Online':
 
-        age = st.number_input('Age', min_value=1, max_value=100, value=25)
-        sex = st.selectbox('Sex', ['male', 'female'])
-        bmi = st.number_input('BMI', min_value=10, max_value=50, value=10)
-        children = st.selectbox('Children', [0,1,2,3,4,5,6,7,8,9,10])
-        if st.checkbox('Smoker'):
+        age = st.number_input('Długość', min_value=100, max_value=3000, value=1200)
+        sex = st.number_input('Szerokość', min_value=100, max_value=3000, value=600)
+        bmi = st.number_input('Wysokość', min_value=50, max_value=2500, value=850)
+        
+        if st.checkbox('Standard'):
             smoker = 'yes'
         else:
             smoker = 'no'
-        region = st.selectbox('Region', ['southwest', 'northwest', 'northeast', 'southeast'])
+        region = st.selectbox('TYP', ['southwest', 'northwest', 'northeast', 'southeast'])
 
         output=""
 
